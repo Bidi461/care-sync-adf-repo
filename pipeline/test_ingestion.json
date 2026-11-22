@@ -47,11 +47,29 @@
 				"outputs": [
 					{
 						"referenceName": "DS_Parquet1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Container": {
+								"value": "@pipeline().parameters.tgt_container",
+								"type": "Expression"
+							},
+							"File_path": {
+								"value": "@pipeline().parameters.tgt_file_path",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"tgt_file_path": {
+				"type": "string"
+			},
+			"tgt_container": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
